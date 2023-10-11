@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy Node.js app to Azure Web App - Code-Chef-Frontend
+name: Build and deploy Node.js app to Azure Web App - CodeFest23
 
 on:
   push:
@@ -26,26 +26,20 @@ jobs:
           npm install
           npm run build --if-present
           npm run test --if-present
-      #For zipping artifact
+     #For zipping artifact
       - name: Zip on Ubuntu
         uses: nguyenquyhy/zip-release@v0.3.0
         with:
         # Filename for archive
           filename: release.zip
         # Base path for archive files
-          path: ./build/
+          path: ./build/*
           
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
         with:
             name: node-app
-            path: release.zip    
-
-      - name: Upload artifact for deployment job
-        uses: actions/upload-artifact@v2
-        with:
-          name: node-app
-          path: .
+            path: release.zip
 
   deploy:
     runs-on: ubuntu-latest
@@ -64,7 +58,7 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'Code-Chef-Frontend'
+          app-name: 'CodeFest23'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_EAB484ECC53047BD80771E157B2232DD }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_863D0E2722D84353BD634C146B3063D2 }}
           package: release.zip
