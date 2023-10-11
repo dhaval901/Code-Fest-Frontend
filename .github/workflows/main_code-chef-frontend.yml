@@ -26,6 +26,20 @@ jobs:
           npm install
           npm run build --if-present
           npm run test --if-present
+      #For zipping artifact
+      - name: Zip on Ubuntu
+        uses: nguyenquyhy/zip-release@v0.3.0
+        with:
+        # Filename for archive
+          filename: release.zip
+        # Base path for archive files
+          path: ./build/*
+          
+      - name: Upload artifact for deployment job
+        uses: actions/upload-artifact@v2
+        with:
+            name: node-app
+            path: release.zip    
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
@@ -53,4 +67,4 @@ jobs:
           app-name: 'Code-Chef-Frontend'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_EAB484ECC53047BD80771E157B2232DD }}
-          package: .
+          package: release.zip
