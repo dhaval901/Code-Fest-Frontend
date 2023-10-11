@@ -1,7 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import { Settings } from "@mui/icons-material";
+import { Button, Typography } from "@mui/material";
+import styled from "styled-components";
+import Chatbot from "./Chatbot";
 
 function App() {
+  const BlueButton = styled(Button)({
+    backgroundColor: "skyblue",
+    color: "#345",
+    margin: 5,
+    "&:hover": { backgroundColor: "lightblue" },
+    "&:disbaled": { backgroundColor: "gray", color: "white" },
+  });
   return (
     <div className="App">
       <header className="App-header">
