@@ -63,4 +63,4 @@ jobs:
           app-name: 'CodeFestReact'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_D768E72C979E4C288E453244DF6102D2 }}
-          package: .
+          package: release.zip
