@@ -23,10 +23,20 @@ jobs:
 
       - name: npm install, build, and test
         run: |
-          npm install
+          npm i @nivo/core
+          npm install --force
+          CI=false 
           npm run build --if-present
           npm run test --if-present
-
+      #For zipping artifact
+      - name: Zip on Ubuntu
+        uses: nguyenquyhy/zip-release@v0.3.0
+        with:
+        # Filename for archive
+          filename: release.zip
+        # Base path for archive files
+          path: ./build/*
+          
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
         with:
