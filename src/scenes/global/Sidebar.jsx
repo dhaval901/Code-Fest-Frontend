@@ -98,7 +98,7 @@ const Sidebar = () => {
                   alt="profile-user"
                   width="100px"
                   height="100px"
-                  src={`../../assets/shishir.jpg`}
+                  src={`../../assets/a.jpg`}
                   style={{ cursor: "pointer", borderRadius: "50%" }}
                 />
               </Box>
@@ -109,7 +109,7 @@ const Sidebar = () => {
                   fontWeight="bold"
                   sx={{ m: "10px 0 0 0" }}
                 >
-                  VYAS
+                  Hi ABC
                 </Typography>
                 <Typography variant="h5" color={colors.greenAccent[500]}>
                  ADMIN
