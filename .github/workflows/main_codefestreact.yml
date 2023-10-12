@@ -23,25 +23,15 @@ jobs:
 
       - name: npm install, build, and test
         run: |
-          npm i @nivo/core
-          npm install --force
-          CI=false 
+          npm install
           npm run build --if-present
           npm run test --if-present
-      #For zipping artifact
-      - name: Zip on Ubuntu
-        uses: nguyenquyhy/zip-release@v0.3.0
-        with:
-        # Filename for archive
-          filename: release.zip
-        # Base path for archive files
-          path: ./build/*
-          
+
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
         with:
           name: node-app
-          path: release.zip
+          path: .
 
   deploy:
     runs-on: ubuntu-latest
@@ -62,5 +52,5 @@ jobs:
         with:
           app-name: 'CodeFestReact'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_D768E72C979E4C288E453244DF6102D2 }}
-          package: release.zip
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_338A08EAB9B6497189039A97764924AB }}
+          package: .
