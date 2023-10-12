@@ -15,6 +15,18 @@ body,
   position: relative;
 }
 
+.chatbot{
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  height: 500px;
+}
+
+.videoconf{
+  position: fixed;
+  padding: 200px;
+}
+
 ::-webkit-scrollbar{
   width: 10px;
 }
