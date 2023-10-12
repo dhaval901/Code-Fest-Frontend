@@ -1,44 +1,85 @@
-import { useTheme } from '@emotion/react';
-import { Button, Card, CardContent, Checkbox, Divider, FormControlLabel, FormGroup, Grid, Paper, Stack, Table, TableBody, TableCell, TableContainer, TableHead, TextField, Typography, colors } from '@mui/material'
-import React from 'react'
-import { useContext } from 'react';
-import { ColorModeContext, tokens } from '../../theme';
-import ReactDOM from 'react-dom';
+import React, {useState} from 'react';
+import { TextField, Button, Container, Stack } from '@mui/material';
+import { Link } from "react-router-dom"
+ 
+ 
 const Refer = () => {
-  const theme = useTheme();
-  const colours = tokens(theme.palette.mode);
-  const colourMode = useContext(ColorModeContext);
-
-const columns=[{id:'id',name:'Id'},
-                {id:'firstname',name:'First Name'},
-                {id:'lastname',name:'Last Name'},
-                {id:'action',name:'Action'}
-              ] 
-
-  return (
-    <div>
-
-      This is Tbale 
-    <Paper>
-    <div>
-      <Button variant="contained"> Add New(+)</Button>
-    </div>
-
-      <TableContainer>
-        <Table>
-          <TableHead>
-            {columns.map((column) => <TableCell key={column.id}>{column.name}</TableCell>)}
-
-          </TableHead>
-          <TableBody>
-             {columns.map((column) => <TableCell key={column.id} >{column.name}</TableCell>)}
-          </TableBody>
-        </Table>
-      </TableContainer>
-    </Paper>
-
-    </div>
-  )
+    const [firstName, setFirstName] = useState('')
+    const [lastName, setLastName] = useState('')
+    const [email, setEmail] = useState('')
+    const [dateOfBirth, setDateOfBirth] = useState('')
+    const [password, setPassword] = useState('')
+ 
+    function handleSubmit(event) {
+        event.preventDefault();
+        console.log(firstName, lastName, email, dateOfBirth, password) 
+    }
+ 
+    return (
+        <React.Fragment>
+            <h2>Referral Form</h2>
+            <form onSubmit={handleSubmit} action={<Link to="/login" />}>
+                <Stack spacing={2} direction="row" sx={{marginBottom: 4}}>
+                    <TextField
+                        type="text"
+                        variant='outlined'
+                        color='secondary'
+                        label="First Name"
+                        onChange={e => setFirstName(e.target.value)}
+                        value={firstName}
+                        fullWidth
+                        required
+                    />
+                    <TextField
+                        type="text"
+                        variant='outlined'
+                        color='secondary'
+                        label="Last Name"
+                        onChange={e => setLastName(e.target.value)}
+                        value={lastName}
+                        fullWidth
+                        required
+                    />
+                </Stack>
+                <TextField
+                    type="email"
+                    variant='outlined'
+                    color='secondary'
+                    label="Email"
+                    onChange={e => setEmail(e.target.value)}
+                    value={email}
+                    fullWidth
+                    required
+                    sx={{mb: 4}}
+                />
+                <TextField
+                    type="password"
+                    variant='outlined'
+                    color='secondary'
+                    label="Password"
+                    onChange={e => setPassword(e.target.value)}
+                    value={password}
+                    required
+                    fullWidth
+                    sx={{mb: 4}}
+                />
+                <TextField
+                    type="date"
+                    variant='outlined'
+                    color='secondary'
+                    label="Date of Birth"
+                    onChange={e => setDateOfBirth(e.target.value)}
+                    value={dateOfBirth}
+                    fullWidth
+                    required
+                    sx={{mb: 4}}
+                />
+                <Button variant="outlined" color="secondary" type="submit">Register</Button>
+            </form>
+            <small>Already have an account? <Link to="/login">Login Here</Link></small>
+     
+        </React.Fragment>
+    )
 }
-
-export default Refer
+ 
+export default Refer;
