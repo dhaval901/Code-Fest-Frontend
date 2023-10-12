@@ -7,6 +7,7 @@ import Sidebar from "./scenes/global/Sidebar";
 import Team from "./scenes/team/team";
 import Contacts from "./scenes/contacts/contacts";
 import Refer from "./scenes/refer/refer";
+import Talk from "./scenes/talk/Talk";
 
 // Use Ctrl + K +C
 
@@ -35,6 +36,7 @@ function App() {
               <Route path="/" element={<Dashboard/>} />
               <Route path="/refer" element={<Refer/>} />
               <Route path="/team" element={<Team/>} />
+              <Route path="/talk" element={<Talk/>} />
               <Route path="/contacts" element={<Contacts/>} />
               <Route path="/invoices" element="Invoices" />
               <Route path="/bar" element="Bar" />

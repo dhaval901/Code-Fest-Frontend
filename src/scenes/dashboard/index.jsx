@@ -13,7 +13,7 @@ const Dashboard = () => {
         </Box>
       </Box>
       <div>
-          <iframe className="chatbot" src="https://web.powerva.microsoft.com/environments/Default-9ff87383-ae93-4e4b-85fd-e21685c0431c/bots/crae2_listeningear/webchat?__version__=2" ></iframe>
+          <iframe className="chatbot" src="https://web.powerva.microsoft.com/environments/Default-9ff87383-ae93-4e4b-85fd-e21685c0431c/bots/crae2_listeningear/webchat?__version__=2"></iframe>
       </div>
     </div>
   );
