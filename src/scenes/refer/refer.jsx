@@ -159,17 +159,7 @@ class Refer extends Component {
                 }
               />
             </FormControl>
-            <Button
-              disabled={!this.isValid()}
-              disableRipple
-              fullWidth
-              variant="outlined"
-              className={classes.button}
-              type="submit"
-              onClick={this.submitRegistration}
-            >
-              Join
-            </Button>
+          
           </form>
 
           {this.state.error ? (

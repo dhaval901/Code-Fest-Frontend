@@ -20,6 +20,7 @@ const Refer = () => {
             <h2>Referral Form</h2>
             <form onSubmit={handleSubmit} action={<Link to="/login" />}>
                 <Stack spacing={2} direction="row" sx={{marginBottom: 4}}>
+                  
                     <TextField
                         type="text"
                         variant='outlined'
@@ -74,9 +75,9 @@ const Refer = () => {
                     required
                     sx={{mb: 4}}
                 />
-                <Button variant="outlined" color="secondary" type="submit">Register</Button>
+                <Button variant="outlined" color="secondary" type="submit">Refer Now</Button>
             </form>
-            <small>Already have an account? <Link to="/login">Login Here</Link></small>
+          
      
         </React.Fragment>
     )

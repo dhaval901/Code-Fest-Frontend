@@ -38,7 +38,7 @@ const Team = () => {
     },
     {
       field: "accessLevel",
-      headerName: "Access Level",
+      headerName: "Status",
       flex: 1,
       renderCell: ({ row: { access } }) => {
         return (
@@ -49,17 +49,17 @@ const Team = () => {
             display="flex"
             justifyContent="center"
             backgroundColor={
-              access === "admin"
+              access === "new"
                 ? colors.greenAccent[600]
-                : access === "manager"
+                : access === "duplicate"
                 ? colors.greenAccent[700]
                 : colors.greenAccent[700]
             }
             borderRadius="4px"
           >
-            {access === "admin" && <AdminPanelSettingsOutlinedIcon />}
-            {access === "manager" && <SecurityOutlinedIcon />}
-            {access === "user" && <LockOpenOutlinedIcon />}
+            {access === "new" && <AdminPanelSettingsOutlinedIcon />}
+            {access === "duplicate" && <SecurityOutlinedIcon />}
+            {access === "in-process" && <LockOpenOutlinedIcon />}
             <Typography color={colors.grey[100]} sx={{ ml: "5px" }}>
               {access}
             </Typography>
