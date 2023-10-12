@@ -164,13 +164,7 @@ const Sidebar = () => {
             >
               
             </Typography>
-            <Item
-              title="Profile Form"
-              to="/form"
-              icon={<PersonOutlinedIcon />}
-              selected={selected}
-              setSelected={setSelected}
-            />
+       
             <Item
               title="Book Appointment"
               to="/calendar"
