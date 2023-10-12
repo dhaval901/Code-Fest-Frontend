@@ -23,7 +23,9 @@ jobs:
 
       - name: npm install, build, and test
         run: |
+          npm i @nivo/core
           npm install
+          CI=false
           npm run build --if-present
           npm run test --if-present
        #For zipping artifact
