@@ -60,7 +60,7 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'Code-Chef-Frontend'
+          app-name: 'CodeFestReact'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_5695FB7B34BF4A288DE4DCC58F33C6AD }}
           package: release.zip
