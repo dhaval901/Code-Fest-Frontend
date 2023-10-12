@@ -7,7 +7,8 @@ import Sidebar from "./scenes/global/Sidebar";
 import Team from "./scenes/team/team";
 import Contacts from "./scenes/contacts/contacts";
 import Refer from "./scenes/refer/refer";
-
+import React from 'react';
+import ReactDOM from 'react-dom';
 // Use Ctrl + K +C
 
 // import Team from "./scenes/team";
