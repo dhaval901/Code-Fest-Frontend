@@ -8,6 +8,8 @@ import Team from "./scenes/team/team";
 import Contacts from "./scenes/contacts/contacts";
 import Refer from "./scenes/refer/refer";
 import Talk from "./scenes/talk/Talk";
+import React from 'react';
+import ReactDOM from 'react-dom';
 
 // Use Ctrl + K +C
 
