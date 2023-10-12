@@ -23,8 +23,9 @@ jobs:
       
       - name: npm install, build, and test
         run: |
-          npm install
-          CI=false npm run build --if-present
+          npm install --force
+          CI=false 
+          npm run build --if-present
           npm run test --if-present
       #For zipping artifact
       - name: Zip on Ubuntu
